@@ -28,7 +28,7 @@ public class CowsAndBulls {
 			 {
 				 
 				 //find index of this character such way that corresponding secrect chr
-				 boolean flag=false;
+				 //boolean flag=false;
 				 for(int j=secret.indexOf(ch2);j<secret.length();j++)
 				 {
 					 if(secret.charAt(j)==guess.charAt(j))

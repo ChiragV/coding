@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0-rc.1/Chart.bundle.js"></script>
+<div class="container">
+  <canvas id="examChart"></canvas>
+</div>
+  
+
+	  <script>
+	  
+	  // todo: do forecasting using Java https://github.com/signaflo/java-timeseries/wiki/Example%20of%20daily%20predictions%20with%20weekly%20seasonality
+	  //or prophet : https://facebook.github.io/prophet/
+	  //and get below data through microservice/json
+	  var originalJSON = {
+   "jsonarray": [{
+          t: "2015-03-10",
+          y: 10
+        },{
+          t: "2015-03-11",
+          y: 11
+        },
+        {
+          t: "2015-03-12",
+          y: 12
+        },
+        {
+          t: "2015-03-13",
+          y: 13
+        }]
+};
+ var forecastJSON = {
+   "jsonarray": [{
+          t: "2015-03-13",
+          y: 13
+        },
+        {
+          t: "2015-03-14",
+          y: 14
+        },
+        {
+          t: "2015-03-15",
+          y: 15
+        }]
+};
+var ctx = document.getElementById("examChart").getContext("2d");
+var labels1 = originalJSON.jsonarray.map(function(e) {
+
+   return e.t;
+});
+var origData = originalJSON.jsonarray.map(function(item) {
+    return {x: new Date(item["t"]), y: item["y"]};
+});
+var forecastData = forecastJSON.jsonarray.map(function(item) {
+   return {x: new Date(item["t"]), y: item["y"]};
+});
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ["2015-03-11","2015-03-12","2015-03-13","2015-03-14","2015-03-15","2015-03-16"],
+    datasets: [{
+      label: 'Original',
+      data: origData,
+      backgroundColor: 'rgba(58, 196, 174, 0.4)',
+      borderColor: '#3ac4ae',
+      borderWidth: 1
+    },{
+      label: 'Forecast',
+      data: forecastData,
+      backgroundColor: 'rgba(255, 107, 66, 0.4)',
+      borderColor: '#ff6b42',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        type: 'time',
+		time: {
+              parser: 'YYYY-MM-DD',  
+			  tooltipFormat: 'DD-MMM-YY',			  
+              unit: 'day',
+              unitStepSize: 1,
+              displayFormats: {
+                'day': 'YYYY-MM-DD'
+              }
+			 },
+		 display: true,
+        distribution: 'linear'
+      }
+	  ]
+    }
+  }
+});
+    </script>
+
+  
+  </body>
+</html>

@@ -1,15 +1,17 @@
 import static org.junit.Assert.assertEquals;
-//https://leetcode.com/problems/compare-version-numbers/
-public class CompareVersionNumbers_165 {
 
-	public static void main(String[] args) {
+public class LeetCode165CompareVersionNumbers {
+
+	public static void main(String[] args) 
+	{
 		assertEquals(-1, compareVersion("1.0","1.0.1"));
 		assertEquals(1, compareVersion("1.0.1","1.0"));	
 		assertEquals(0, compareVersion("1.0","1.0.0"));	
 
 	}
 
-	 public static int compareVersion(String version1, String version2) {
+	 public static int compareVersion(String version1, String version2) 
+	 {
 	     String[] version1Arr=version1.split("\\.");   
 	     String[] version2Arr=version2.split("\\.");
 	     
@@ -22,7 +24,6 @@ public class CompareVersionNumbers_165 {
 	    		 v1Val=0;
 	    	 else
 	    		 v1Val=Integer.parseInt(version1Arr[i]);
-	    	 
 	    	 
 	    	 if(version2Arr.length<=i)
 	    		 v2Val=0;

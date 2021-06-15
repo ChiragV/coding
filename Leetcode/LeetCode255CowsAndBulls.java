@@ -1,6 +1,6 @@
 import static org.junit.Assert.assertEquals;
 
-public class CowsAndBulls {
+public class LeetCode255CowsAndBulls {
 
 	public static void main(String args[]) {
 		assertEquals("1A3B", getHint("1807","7810"));
@@ -28,7 +28,6 @@ public class CowsAndBulls {
 			 {
 				 
 				 //find index of this character such way that corresponding secrect chr
-				 //boolean flag=false;
 				 for(int j=secret.indexOf(ch2);j<secret.length();j++)
 				 {
 					 if(secret.charAt(j)==guess.charAt(j))

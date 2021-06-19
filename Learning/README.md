@@ -4,11 +4,11 @@
 	2. if there are two recursive calls then time complexity will be O(2<sup>n</sup>).
 * Recursion with loops ( deadly confusing combination )
 
-Below is java program to print all permunation combinations.
+Below is java program to print all permutation combinations.
 
 permute("ABC","");
 
-To understand how recursion with loop works; run below program and understnad output.
+To understand how recursion with loop works; run below program and understand output.
 
 ![Recursion with loop image](./images/recursionAndLoop.png)
 

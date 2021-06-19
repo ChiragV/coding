@@ -18,14 +18,14 @@ void permute(String str1,String str2)
 	System.out.println("****"+str1+"****"+str2);
 	if(str1.length()==0) //base condition
 	{
-			System.out.println(str2+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		System.out.println(str2+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 	}
 		
     for(int i=0;i<str1.length();i++)
     {
       System.out.println(i+"###"+str1+"###"+str2);
       char ch=str1.charAt(i);		
-      String str3=str1.substring(0, i)+str1.substring(i+1, str1.length());//bc
+      String str3=str1.substring(0, i)+str1.substring(i+1, str1.length());
       String endStr="";
 
       if(i==0) System.out.println(i+"=>("+str3+")..("+str2+":"+ch+")"); else

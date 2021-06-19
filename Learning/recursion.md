@@ -10,6 +10,8 @@ permute("ABC","");
 
 To understand how recursion with loop works; run below program and understnad output.
 
+![Recursion with loop image](./images/recursionAndLoop.png)
+
 ```
 void permute(String str1,String str2)
 {

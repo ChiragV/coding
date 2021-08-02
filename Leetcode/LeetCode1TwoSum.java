@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -11,6 +14,10 @@ Input: nums = [2,7,11,15], target = 9
 Output: [0,1]
 Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 
+Questions to ask :
+1. will this be always sorted.
+2. can this contain duplicate ?
+
  */
 public class LeetCode1TwoSum {
 
@@ -18,12 +25,36 @@ public class LeetCode1TwoSum {
 	{
 		int sum[]= {2,7,11,15};
 		int target=9;
-		int[] ans=twoSum(sum,target);
-		System.out.println(ans[0] +":"+ans[1]);
+		int[] ans=twoSum2(sum,target);
+		System.out.println(ans[0] +":"+ans[1]);//0:1
+		
+		int sum2[]= {2,7,11,15};
+		ans=twoSum2(sum2,target);
+		System.out.println(ans[0] +":"+ans[1]);//0:1
 		
 	}
+	
+	 public static int[] twoSum2(int[] nums, int target) 
+	 {
+		 int res[]=new int[2];
+		 Map<Integer,Integer> map=new HashMap<Integer,Integer>();
+		 for(int i=0;i<nums.length;i++)
+		 {
+			
+			 
+			 if(map.containsKey(nums[i]))
+			 {
+				 res[0]=map.get(nums[i]);
+				 res[1]=i;
+			 }
+			 int numberToFind=target-nums[i];//7
+			 map.put(numberToFind,i);//[{7,0},{2,1},
+			 
+		 }
+		 return res;
+	 }
 
-	 public static int[] twoSum(int[] nums, int target) 
+	 public static int[] twoSum1(int[] nums, int target) 
 	 {
 
 		 int[] ans=new int[2];

@@ -1,3 +1,12 @@
+/*
+This is matrix search problem. So we need to use either DFS or BFS. This is more of DFS problem. 
+First double loop and find first char and cal dfs() function. in function pass word and it's index. 
+If index and word length same; we are done. 
+put standard boundry checks, 
+and change current char to something else like blank so we don't visit same char again, 
+go all four direction and do || and return boolean answer. before that change character again.
+
+*/
 class Leetcode77WordSearch {
     public boolean exist(char[][] board, String word) 
     {

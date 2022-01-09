@@ -41,8 +41,8 @@ public class LeetCode2135CountWordsObtained
 	       for(String str :listTarget)
 	       {
 	    	   //for each string skip one char and check in start set
-	    	   for (int j = 0; j < str.length(); j++) 
-	           {
+	    	   for (int j = 0; j < str.length(); j++)
+			   {
 				   String prefix = str.substring(0, j);
 	    		   String suffix = str.substring(j+1);
 	               String new_str = prefix + suffix;

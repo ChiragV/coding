@@ -41,7 +41,7 @@ public class LeetCode567PermutationInString
         char small[]=s2.toCharArray();
         char big[]=s1.toCharArray();
         List<Character> sourceList = new ArrayList<>();
-        //prepare list to can be modified easily
+        //prepare list so that it can be modified easily
         for (char c : small)
         {
             sourceList.add(c);
@@ -73,7 +73,6 @@ public class LeetCode567PermutationInString
                 }
             }
         }
-
         return false;
     }
 }

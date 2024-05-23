@@ -36,3 +36,4 @@ void permute(String str1,String str2)
     }
 }
 ```
+One more such problem with loop and recursion is : https://leetcode.com/problems/palindrome-partitioning/description/
